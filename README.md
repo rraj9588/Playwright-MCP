@@ -81,4 +81,41 @@
   ```
 - Do not hardcode sensitive or environment-specific data in test files.
 
----
+## Moving the Framework to Git
+
+1. **Initialize a Git repository (if not already done):**
+   ```bash
+   git init
+   ```
+2. **Add all files to the repository:**
+   ```bash
+   git add .
+   ```
+3. **Commit your changes:**
+   ```bash
+   git commit -m "Initial commit: Playwright Python automation framework"
+   ```
+4. **Create a new repository on GitHub, GitLab, or your preferred Git hosting service.**
+5. **Add the remote origin (replace `<your-repo-url>` with your actual repo URL):**
+   ```bash
+   git remote add origin <your-repo-url>
+   ```
+6. **Push your code to the remote repository:**
+   ```bash
+   git push -u origin main
+   ```
+   (If your default branch is `master`, use `master` instead of `main`.)
+
+7. **(Optional) Add a `.gitignore` file** to exclude files like `.env`, `__pycache__/`, `allure-results/`, `.venv/`, etc.
+
+Example `.gitignore`:
+```
+.env
+.venv/
+__pycache__/
+allure-results/
+*.pyc
+archive/
+```
+
+After these steps, your framework will be version-controlled and available on your Git hosting platform.
