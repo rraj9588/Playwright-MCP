@@ -2,7 +2,7 @@
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/<your-username>/playwright-ui-framework/actions)
 [![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://github.com/<your-username>/playwright-ui-framework)
 
-# Playwright Python Automation Framework
+# Playwright-Python Based Test Framework
 
 ## Features
 - Playwright browser automation (Python)

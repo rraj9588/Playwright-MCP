@@ -1,4 +1,4 @@
-# Playwright Python Automation Framework
+# Playwright-Python Based Test Framework
 
 ## Features
 - Playwright browser automation (Python)
