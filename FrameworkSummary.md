@@ -173,7 +173,7 @@ A sample `Jenkinsfile` is included for automated test execution:
 - **Test Results**: Jenkins publishes JUnit XML results for all stages.
 - **Allure Reports**: Allure results are published if the Allure Jenkins plugin is installed.
 - **Cleanup**: Cleans up virtual environment and result folders after the build.
-- **Slack Notifications**: Sends build status notifications to Slack (requires Slack Jenkins plugin and configuration).
+- **Slack Notifications**: Sends build status notifications to Slack channel `#test-result` (requires Slack Jenkins plugin and configuration).
 
 Example pipeline stages:
 ```groovy

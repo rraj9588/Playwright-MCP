@@ -97,4 +97,4 @@ tests/test_navigate_and_click_products.py:11: 10 warnings
     @pytest.mark.navigation
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-====================== 22 passed, 220 warnings in 16.00s =======================
+================= 22 passed, 220 warnings in 77.37s (0:01:17) ==================
