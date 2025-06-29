@@ -169,7 +169,8 @@ A sample `Jenkinsfile` is included for automated test execution:
 - **Setup**: Installs dependencies and Playwright browsers in a virtual environment.
 - **Smoke Tests**: Runs all tests marked with `@pytest.mark.smoke`, generates Allure and JUnit XML reports, and archives results.
 - **E2E Tests**: Runs all tests marked with `@pytest.mark.e2e`, generates Allure and JUnit XML reports, and archives results.
-- **Test Results**: Jenkins publishes JUnit XML results for both stages.
+- **API Tests**: Runs all tests marked with `@pytest.mark.api`, generates Allure and JUnit XML reports, and archives results.
+- **Test Results**: Jenkins publishes JUnit XML results for all stages.
 
 Example pipeline stages:
 ```groovy
@@ -181,6 +182,11 @@ stage('Smoke Tests') {
 stage('E2E Tests') {
     steps {
         sh 'source $VENV_DIR/bin/activate && pytest -m e2e --alluredir=allure-results-e2e --junitxml=allure-results-e2e/junit-e2e.xml'
+    }
+}
+stage('API Tests') {
+    steps {
+        sh 'source $VENV_DIR/bin/activate && pytest -m api --alluredir=allure-results-api --junitxml=allure-results-api/junit-api.xml'
     }
 }
 post {

@@ -30,6 +30,16 @@ pipeline {
                 }
             }
         }
+        stage('API Tests') {
+            steps {
+                sh 'source $VENV_DIR/bin/activate && pytest -m api --alluredir=allure-results-api --junitxml=allure-results-api/junit-api.xml'
+            }
+            post {
+                always {
+                    archiveArtifacts artifacts: 'allure-results-api/**', allowEmptyArchive: true
+                }
+            }
+        }
     }
     post {
         always {
