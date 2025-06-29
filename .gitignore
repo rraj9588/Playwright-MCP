@@ -1,3 +1,16 @@
+# Python/Playwright/Allure/VSCode ignores
+.env
+.venv/
+__pycache__/
+allure-results/
+*.pyc
+archive/
+.DS_Store
+result.txt
+test_run.log
+*.log
+.ipynb_checkpoints/
+.vscode/
 
 # Playwright
 node_modules/
@@ -5,3 +18,6 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# OS-specific
+Thumbs.db
