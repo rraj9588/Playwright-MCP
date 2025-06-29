@@ -1,0 +1,100 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.9.17, pytest-8.4.1, pluggy-1.6.0
+rootdir: /Users/rajatraj/Playwright-MCP
+configfile: pytest.ini
+plugins: xdist-3.7.0, allure-pytest-2.14.3
+created: 10/10 workers
+10 workers [22 items]
+
+......................                                                   [100%]
+=============================== warnings summary ===============================
+tests/BOM/test_bom_example.py:15: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/BOM/test_bom_example.py:15: PytestUnknownMarkWarning: Unknown pytest.mark.bom - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.bom
+
+tests/BOM/test_bom_example.py:22: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/BOM/test_bom_example.py:22: PytestUnknownMarkWarning: Unknown pytest.mark.bom - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.bom
+
+tests/BOM/test_bom_example.py:30: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/BOM/test_bom_example.py:30: PytestUnknownMarkWarning: Unknown pytest.mark.bom - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.bom
+
+tests/BOM/test_bom_example.py:31: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/BOM/test_bom_example.py:31: PytestUnknownMarkWarning: Unknown pytest.mark.regression - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.regression
+
+tests/BOM/test_bom_example.py:38: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/BOM/test_bom_example.py:38: PytestUnknownMarkWarning: Unknown pytest.mark.bom - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.bom
+
+tests/BOM/test_bom_example.py:39: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/BOM/test_bom_example.py:39: PytestUnknownMarkWarning: Unknown pytest.mark.ui - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.ui
+
+tests/BOM/test_bom_example.py:56: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/BOM/test_bom_example.py:56: PytestUnknownMarkWarning: Unknown pytest.mark.bom - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.bom
+
+tests/BOM/test_bom_example.py:70: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/BOM/test_bom_example.py:70: PytestUnknownMarkWarning: Unknown pytest.mark.bom - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.bom
+
+tests/BOM/test_bom_example.py:92: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/BOM/test_bom_example.py:92: PytestUnknownMarkWarning: Unknown pytest.mark.bom - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.bom
+
+tests/Concurrency/test_concurrency_example.py:13: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/Concurrency/test_concurrency_example.py:13: PytestUnknownMarkWarning: Unknown pytest.mark.concurrency - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.concurrency
+
+tests/Concurrency/test_concurrency_example.py:20: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/Concurrency/test_concurrency_example.py:20: PytestUnknownMarkWarning: Unknown pytest.mark.concurrency - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.concurrency
+
+tests/Concurrency/test_concurrency_example.py:28: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/Concurrency/test_concurrency_example.py:28: PytestUnknownMarkWarning: Unknown pytest.mark.concurrency - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.concurrency
+
+tests/Concurrency/test_concurrency_example.py:29: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/Concurrency/test_concurrency_example.py:29: PytestUnknownMarkWarning: Unknown pytest.mark.edgecase - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.edgecase
+
+tests/Concurrency/test_concurrency_example.py:40: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/Concurrency/test_concurrency_example.py:40: PytestUnknownMarkWarning: Unknown pytest.mark.concurrency - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.concurrency
+
+tests/Concurrency/test_concurrency_example.py:59: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/Concurrency/test_concurrency_example.py:59: PytestUnknownMarkWarning: Unknown pytest.mark.concurrency - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.concurrency
+
+tests/Concurrency/test_concurrency_example.py:69: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/Concurrency/test_concurrency_example.py:69: PytestUnknownMarkWarning: Unknown pytest.mark.concurrency - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.concurrency
+
+tests/Concurrency/test_concurrency_example.py:70: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/Concurrency/test_concurrency_example.py:70: PytestUnknownMarkWarning: Unknown pytest.mark.critical - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.critical
+
+tests/api/test_graphql/test_graphql_api_examples.py:11: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/api/test_graphql/test_graphql_api_examples.py:11: PytestUnknownMarkWarning: Unknown pytest.mark.api - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.api
+
+tests/api/test_graphql/test_graphql_api_examples.py:12: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/api/test_graphql/test_graphql_api_examples.py:12: PytestUnknownMarkWarning: Unknown pytest.mark.graphql - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.graphql
+
+tests/api/test_rest/test_rest_api_examples.py:11: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/api/test_rest/test_rest_api_examples.py:11: PytestUnknownMarkWarning: Unknown pytest.mark.api - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.api
+
+tests/api/test_rest/test_rest_api_examples.py:12: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/api/test_rest/test_rest_api_examples.py:12: PytestUnknownMarkWarning: Unknown pytest.mark.rest - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.rest
+
+tests/test_navigate_and_click_products.py:11: 10 warnings
+  /Users/rajatraj/Playwright-MCP/tests/test_navigate_and_click_products.py:11: PytestUnknownMarkWarning: Unknown pytest.mark.navigation - is this a typo?  You can register custom marks to avoid this warning - for details, see https://docs.pytest.org/en/stable/how-to/mark.html
+    @pytest.mark.navigation
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+====================== 22 passed, 220 warnings in 16.00s =======================
