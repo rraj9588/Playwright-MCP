@@ -171,6 +171,9 @@ A sample `Jenkinsfile` is included for automated test execution:
 - **E2E Tests**: Runs all tests marked with `@pytest.mark.e2e`, generates Allure and JUnit XML reports, and archives results.
 - **API Tests**: Runs all tests marked with `@pytest.mark.api`, generates Allure and JUnit XML reports, and archives results.
 - **Test Results**: Jenkins publishes JUnit XML results for all stages.
+- **Allure Reports**: Allure results are published if the Allure Jenkins plugin is installed.
+- **Cleanup**: Cleans up virtual environment and result folders after the build.
+- **Slack Notifications**: Sends build status notifications to Slack (requires Slack Jenkins plugin and configuration).
 
 Example pipeline stages:
 ```groovy
@@ -192,6 +195,23 @@ stage('API Tests') {
 post {
     always {
         junit 'allure-results-*/junit-*.xml'
+        allure([
+            includeProperties: false,
+            jdk: '',
+            results: [[path: 'allure-results-smoke']],
+            reportBuildPolicy: 'ALWAYS',
+            results: [[path: 'allure-results-e2e']],
+            results: [[path: 'allure-results-api']]
+        ])
+    }
+    cleanup {
+        sh 'rm -rf $VENV_DIR allure-results-*'
+    }
+    success {
+        slackSend(channel: '#ci-cd', color: 'good', message: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}")
+    }
+    failure {
+        slackSend(channel: '#ci-cd', color: 'danger', message: "Build FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}")
     }
 }
 ```
