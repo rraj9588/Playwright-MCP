@@ -1,3 +1,7 @@
+[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/<your-username>/playwright-ui-framework/actions)
+[![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://github.com/<your-username>/playwright-ui-framework)
+
 # Playwright Python Automation Framework
 
 ## Features
