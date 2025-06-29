@@ -123,3 +123,30 @@ archive/
 ```
 
 After these steps, your framework will be version-controlled and available on your Git hosting platform.
+
+## CI/CD with Jenkins
+
+A sample `Jenkinsfile` is provided for automated test execution:
+- **Setup**: Installs dependencies and Playwright browsers in a virtual environment.
+- **Smoke Tests**: Runs all tests marked with `@pytest.mark.smoke`, generates Allure and JUnit XML reports, and archives results.
+- **E2E Tests**: Runs all tests marked with `@pytest.mark.e2e`, generates Allure and JUnit XML reports, and archives results.
+- **Test Results**: Jenkins publishes JUnit XML results for both stages.
+
+Example pipeline stages:
+```groovy
+stage('Smoke Tests') {
+    steps {
+        sh 'source $VENV_DIR/bin/activate && pytest -m smoke --alluredir=allure-results-smoke --junitxml=allure-results-smoke/junit-smoke.xml'
+    }
+}
+stage('E2E Tests') {
+    steps {
+        sh 'source $VENV_DIR/bin/activate && pytest -m e2e --alluredir=allure-results-e2e --junitxml=allure-results-e2e/junit-e2e.xml'
+    }
+}
+post {
+    always {
+        junit 'allure-results-*/junit-*.xml'
+    }
+}
+```
