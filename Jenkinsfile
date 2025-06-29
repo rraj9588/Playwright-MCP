@@ -44,6 +44,24 @@ pipeline {
     post {
         always {
             junit 'allure-results-*/junit-*.xml'
+            // Publish Allure reports if plugin is installed
+            allure([
+                includeProperties: false,
+                jdk: '',
+                results: [[path: 'allure-results-smoke']],
+                reportBuildPolicy: 'ALWAYS',
+                results: [[path: 'allure-results-e2e']],
+                results: [[path: 'allure-results-api']]
+            ])
+        }
+        cleanup {
+            sh 'rm -rf $VENV_DIR allure-results-*'
+        }
+        success {
+            slackSend(channel: '#ci-cd', color: 'good', message: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}")
+        }
+        failure {
+            slackSend(channel: '#ci-cd', color: 'danger', message: "Build FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}")
         }
     }
 }
