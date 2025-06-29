@@ -208,10 +208,10 @@ post {
         sh 'rm -rf $VENV_DIR allure-results-*'
     }
     success {
-        slackSend(channel: '#ci-cd', color: 'good', message: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}")
+        slackSend(channel: '#test-result', color: 'good', message: "Build SUCCESS: ${env.JOB_NAME} #${env.BUILD_NUMBER}")
     }
     failure {
-        slackSend(channel: '#ci-cd', color: 'danger', message: "Build FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}")
+        slackSend(channel: '#test-result', color: 'danger', message: "Build FAILURE: ${env.JOB_NAME} #${env.BUILD_NUMBER}")
     }
 }
 ```
