@@ -224,15 +224,30 @@ The `testcontext/` folder is used to store shared test context, data, or state t
 
 > **Best Practice:** Clean up or version-control only essential context files. Avoid storing sensitive data here.
 
-## Model Context Protocol (MCP) Integration
-MCP (Model Context Protocol) is a standard for sharing and synchronizing context between different automation tools, test runners, or systems. In this framework, MCP can be leveraged to:
-- Enable advanced integrations with other tools or platforms that support MCP
-- Share test state, environment, or results in a standardized way
-- Facilitate distributed or cross-language automation scenarios
+## Playwright MCP (Model Context Protocol) Usage (Advanced)
 
-If you plan to use MCP:
-- Add your MCP-related scripts, configs, or adapters in a dedicated folder (e.g., `mcp/`)
-- Document usage and integration steps in the README or a separate MCP guide
-- Ensure any MCP dependencies are listed in `requirements.txt`
+Playwright's Model Context Protocol (MCP) is an advanced feature for sharing browser and test context between tools and processes.
 
-> **Note:** MCP integration is optional and only needed for advanced or cross-platform scenarios. The framework works out of the box for most UI/API automation needs.
+- MCP is typically used in large-scale, distributed, or cross-language automation scenarios.
+- Python Playwright does not natively expose MCP APIs, but you can use Playwright's CLI or Node.js server to interact with MCP endpoints if needed.
+- For most UI/API automation, you do not need to configure MCP.
+
+### How to Use Playwright MCP (Advanced)
+1. Refer to the official Playwright documentation: https://playwright.dev/docs/mcp
+2. Use the Playwright CLI or Node.js server to start an MCP endpoint.
+3. Connect your Python tests to the MCP endpoint using Playwright's remote browser capabilities.
+
+**Example (Node.js MCP server):**
+```bash
+npx playwright mcp-server --port=9000
+```
+
+**Example (Python connect to MCP):**
+```python
+from playwright.sync_api import sync_playwright
+with sync_playwright() as p:
+    browser = p.chromium.connect_over_cdp('ws://localhost:9000')
+    # ...run tests using the remote browser...
+```
+
+> Note: This is an advanced feature and not required for most test automation workflows.

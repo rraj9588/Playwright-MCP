@@ -1,7 +1,3 @@
-[![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/<your-username>/playwright-ui-framework/actions)
-[![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://github.com/<your-username>/playwright-ui-framework)
-
 # Playwright-Python Based Test Framework
 
 ## Features
@@ -38,6 +34,7 @@
 - `tests/utils.py` - Reusable helper functions (e.g., login)
 - `conftest.py` - Pytest fixtures for browser/page
 - `pytest.ini` - Pytest configuration (parallel, Allure, markers)
+- `mcp/` — (Optional) MCP-related scripts, configs, or adapters for Model Context Protocol integration
 
 ## Adding Tests
 - Place new test files in `tests/`.
@@ -105,6 +102,34 @@ If you plan to use MCP:
 - Ensure any MCP dependencies are listed in `requirements.txt`
 
 > **Note:** MCP integration is optional and only needed for advanced or cross-platform scenarios. The framework works out of the box for most UI/API automation needs.
+
+## Playwright MCP (Model Context Protocol) Usage (Advanced)
+
+Playwright's Model Context Protocol (MCP) is an advanced feature for sharing browser and test context between tools and processes.
+
+- MCP is typically used in large-scale, distributed, or cross-language automation scenarios.
+- Python Playwright does not natively expose MCP APIs, but you can use Playwright's CLI or Node.js server to interact with MCP endpoints if needed.
+- For most UI/API automation, you do not need to configure MCP.
+
+### How to Use Playwright MCP (Advanced)
+1. Refer to the official Playwright documentation: https://playwright.dev/docs/mcp
+2. Use the Playwright CLI or Node.js server to start an MCP endpoint.
+3. Connect your Python tests to the MCP endpoint using Playwright's remote browser capabilities.
+
+**Example (Node.js MCP server):**
+```bash
+npx playwright mcp-server --port=9000
+```
+
+**Example (Python connect to MCP):**
+```python
+from playwright.sync_api import sync_playwright
+with sync_playwright() as p:
+    browser = p.chromium.connect_over_cdp('ws://localhost:9000')
+    # ...run tests using the remote browser...
+```
+
+> Note: This is an advanced feature and not required for most test automation workflows.
 
 ## Moving the Framework to Git
 
