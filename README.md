@@ -82,6 +82,29 @@
   ```
 - Do not hardcode sensitive or environment-specific data in test files.
 
+## Environment Variables & Secrets
+
+This framework uses environment variables for all sensitive data (such as usernames and passwords). **Never hardcode credentials in code.**
+
+### How to Set Credentials
+- Locally: Set environment variables in your shell before running tests:
+  ```bash
+  export CHAMELEON_USER="your-username"
+  export CHAMELEON_PASS="your-password"
+  pytest
+  ```
+- Or, use a `.env` file (see below) and a tool like `python-dotenv`.
+- In CI/CD: Set secrets in your pipeline’s environment variable configuration.
+
+### Sample .env.example
+```
+CHAMELEON_URL=https://demo.chameleon.autodesk.com/
+CHAMELEON_USER=your-username
+CHAMELEON_PASS=your-password
+```
+
+> **Note:** Do not commit your real `.env` file or secrets to version control. Only commit `.env.example` as a template.
+
 ## Test Context Directory (`testcontext/`)
 The `testcontext/` folder is used to store shared test context, data, or state that may be needed across multiple tests or by different teams. For example, you can place files like `webtestcontext.txt` or other context/configuration files here. This enables tests to:
 - Share setup or state between UI, API, and workflow tests
