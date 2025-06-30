@@ -215,3 +215,24 @@ post {
     }
 }
 ```
+
+## Test Context Directory (`testcontext/`)
+The `testcontext/` folder is used to store shared test context, data, or state that may be needed across multiple tests or by different teams. For example, you can place files like `webtestcontext.txt` or other context/configuration files here. This enables tests to:
+- Share setup or state between UI, API, and workflow tests
+- Store temporary data or artifacts needed for multi-step or cross-team scenarios
+- Keep context files out of the main test directories for better organization
+
+> **Best Practice:** Clean up or version-control only essential context files. Avoid storing sensitive data here.
+
+## Model Context Protocol (MCP) Integration
+MCP (Model Context Protocol) is a standard for sharing and synchronizing context between different automation tools, test runners, or systems. In this framework, MCP can be leveraged to:
+- Enable advanced integrations with other tools or platforms that support MCP
+- Share test state, environment, or results in a standardized way
+- Facilitate distributed or cross-language automation scenarios
+
+If you plan to use MCP:
+- Add your MCP-related scripts, configs, or adapters in a dedicated folder (e.g., `mcp/`)
+- Document usage and integration steps in the README or a separate MCP guide
+- Ensure any MCP dependencies are listed in `requirements.txt`
+
+> **Note:** MCP integration is optional and only needed for advanced or cross-platform scenarios. The framework works out of the box for most UI/API automation needs.
